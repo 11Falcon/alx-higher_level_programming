@@ -6,8 +6,8 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t rappide = list;
-	listint_t lent = list;
+	listint_t *rappide = list;
+	listint_t *lent = list;
 
 	if (!list)
 		return (0);
