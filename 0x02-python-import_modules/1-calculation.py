@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ = "__main__":
-    from calculator_1.py import *
+    from calculator_1 import *
 a = 10
 b = 5
 print(f"{a} + {b} = {add(a, b)}")
