@@ -30,3 +30,15 @@ Test without args:
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
+
+Test extra args:
+	>>> print(add_integer(1, 2, 3))
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test data types:
+	>>> print(add_integer("hey"))
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
