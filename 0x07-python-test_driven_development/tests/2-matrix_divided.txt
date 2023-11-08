@@ -5,10 +5,10 @@ First import matrix_divided to test
 
 0K CASES:
 
-Test signed and unsigned ints and floats in list matrix:
-     >>> matrix = [[8, 10, 4], [4, 4, 6.7]]
+Test signed and unsigned ints and floats in same size lists in list matrix:
+     >>> matrix = [[1, 2, 3], [4, 5, 6.7]]
      >>> print(matrix_divided(matrix, 2))
-     [[4, 5, 2], [2, 2, 3.35]]
+     [[0.5, 1.0, 1.5], [2.0, 2.5, 3.35]]
 
      >>> matrix = [[1, 2, 3], [4, 5, 6.7]]
      >>> print(matrix_divided(matrix, float("inf")))
@@ -92,7 +92,7 @@ Test matrix with other data types:
      ...
      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-Test extra args:
+     extra args:
      >>> matrix = [[1, 2, 3], [4, 5, 6.7]]
      >>> print(matrix_divided(matrix, 2, 100))
      Traceback (most recent call last):
@@ -106,7 +106,7 @@ Test too few args
      ...
      TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
-Test div as 0 or non-int or non-float:
+      div as 0 or non-int or non-float:
      >>> matrix = [[1, 2], [3, 4]]
      >>> print(matrix_divided(matrix, 0))
      Traceback (most recent call last):

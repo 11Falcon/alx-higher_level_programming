@@ -15,21 +15,21 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    the_error_message = "matrix must be a matrix (list of lists) of integers/floats"
+    error_message = "matrix must be a matrix (list of lists) of integers/floats"
     if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
-        raise TypeError(the_error_message)
+        raise TypeError(error_message)
 
     new_matrix = []
     samelen = len(matrix[0])
     for lists in matrix:
         if type(lists) is not list:
-            raise TypeError(the_error_message)
+            raise TypeError(error_message)
         if len(lists) != samelen:
             raise TypeError("Each row of the matrix must have the same size")
         newlist = []
         for i in lists:
             if not isinstance(i, (int, float)):
-                raise TypeError(the_error_message)
+                raise TypeError(error_message)
             newlist.append(round(i/div, 2))
         new_matrix.append(newlist)
     return new_matrix
