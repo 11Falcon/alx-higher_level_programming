@@ -42,3 +42,7 @@ Starting the Test:
 
 >>> new_l.print_sorted()
 []
+>>> new_l = my_list.print_sorted()
+
+>>> new_l
+['a', 'c', 'f', 'l', 'n', 'o']
