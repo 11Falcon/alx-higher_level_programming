@@ -1,20 +1,30 @@
 >>> MyList = __import__("1-my_list").MyList
 >>> my_list = MyList()
->>> my_List
+>>> my_list
 []
 >>> my_list.append(1)
+
 >>> my_list.append(4)
+
 >>> my_list.append(2)
+
 >>> my_list
 [1, 4, 2]
+
 >>> my_list = MyList([3, 6, 23])
+
 >>> my_list
 [3, 6, 23]
+
 >>> my_list = MyList("falcon")
+
 >>> my_list
 ['f', 'a', 'l', 'c', 'o', 'n']
+
 >>> my_list.print_sorted()
 ['a', 'c', 'f', 'l', 'n', 'o']
+
 >>> new_l = MyList()
+
 >>> new_l.print_sorted()
 []
