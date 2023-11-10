@@ -7,6 +7,9 @@ raise an Exception with the message:
 
 
 class BaseGeometry:
+    """
+    class of BaseGeometry
+    """
     def area(self):
         """
         area function that raise an Exception
