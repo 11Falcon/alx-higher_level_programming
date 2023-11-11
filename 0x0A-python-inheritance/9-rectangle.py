@@ -22,7 +22,7 @@ class Rectangle(BaseGeometry):
     def print(self):
         """print [Rectangle] <width>/<height>"""
         print("[Rectangle] {}/{}".format(self.__width, self.__height))
-    
+
     def __str__(self):
         """ return [Rectangle] <width>/<height>"""
         return str("[Rectangle] {}/{}".format(self.__width, self.__height))
