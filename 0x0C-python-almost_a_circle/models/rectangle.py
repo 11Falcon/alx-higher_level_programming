@@ -25,13 +25,13 @@ def is_int(name, value):
 def is_positive(name, value):
     """check if name is positive"""
     if value <= 0:
-        raise TypeError("{} must be > 0".format(name))
+        raise ValueError("{} must be > 0".format(name))
 
 
 def is_under_zero(name, value):
     """check if name is under zero"""
     if value < 0:
-        raise TypeError("{} must be >= 0".format(name))
+        raise ValueError("{} must be >= 0".format(name))
 
 
 class Rectangle(Base):
