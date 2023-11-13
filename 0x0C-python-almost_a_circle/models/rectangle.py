@@ -9,23 +9,31 @@ __height -> height
 __x -> x
 _y -> y
 Class constructor: def __init__(self, width, height, x=0, y=0, id=None):
-Call the super class with id - this super call with use the logic of the __init__ of the Base class
+Call the super class with id - this super call with use the logic of
+the __init__ of the Base class
 Assign each argument width, height, x and y to the right attribute
 """
 from models.base import Base
+
 
 def is_int(name, value):
     """check if name is an integger"""
     if not isinstance(value, int):
         raise TypeError("{} must be an integer".format(name))
+
+
 def is_positive(name, value):
     """check if name is positive"""
     if value <= 0:
         raise TypeError("{} must be > 0".format(name))
+
+
 def is_under_zero(name, value):
     """check if name is under zero"""
     if value < 0:
         raise TypeError("{} must be >= 0".format(name))
+
+
 class Rectangle(Base):
     """ the class Rectangle that inherits from Base:"""
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -37,11 +45,14 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        se = "{} - {}/{}".format(self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{}".format(self.id, self.x, se)
+
     @property
     def width(self):
         """Get the width"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """__width setter"""
@@ -53,6 +64,7 @@ class Rectangle(Base):
     def height(self):
         """Get the height"""
         return self.__height
+
     @height.setter
     def height(self, value):
         """__height setter"""
@@ -64,6 +76,7 @@ class Rectangle(Base):
     def x(self):
         """Get x"""
         return self.__x
+
     @x.setter
     def x(self, value):
         """__x setter"""
@@ -95,6 +108,6 @@ class Rectangle(Base):
 
         [print("") for s in range(self.y)]
         for i in range(self.height):
-            [print(" ", end = '') for s in range(self.x)]
-            [print("#", end = '') for j in range(self.width)]
+            [print(" ", end='') for s in range(self.x)]
+            [print("#", end='') for j in range(self.width)]
             print("")
