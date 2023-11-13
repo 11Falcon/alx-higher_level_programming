@@ -92,7 +92,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """__y setter"""
-        is_int("x", value)
+        is_int("y", value)
         is_under_zero("y", value)
         self.__y = value
 
