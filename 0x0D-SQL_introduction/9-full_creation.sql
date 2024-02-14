@@ -5,4 +5,3 @@ INSERT INTO second_table(id, name, score) VALUES
 (2, "Jane Smith", 30),
 (3, "Bob Johnson", 22),
 (4, "Alice Williams", 28);
-SELECT COUNT(*) FROM second_table;
