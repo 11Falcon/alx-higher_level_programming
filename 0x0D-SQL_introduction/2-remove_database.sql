@@ -1,2 +1,2 @@
 -- removing a database
-DROP DATABASE hbtn_0c_O;
+DROP DATABASE IF EXISTS btn_0c_O;
