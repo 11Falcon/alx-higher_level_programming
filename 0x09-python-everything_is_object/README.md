@@ -3,19 +3,6 @@
 ## Overview
 This project delves into the fundamental concept that in Python, everything is an object. The focus is on understanding Python's handling of different types of objects, particularly the distinctions between immutable and mutable objects.
 
-**By:** Guillaume
-
-**Weight:** 1
-
-**Project Duration:** Jan 5, 2024, 4:00 AM - Jan 6, 2024, 4:00 AM
-
-## Auto QA Review
-
-- **Mandatory:** 0.0/94
-- **Optional:** 0.0/59
-- **Altogether:** 0.0%
-  
-*Calculation: 0.0% + (0.0% * 0.0%) == 0.0%*
 
 ## Background Context
 This project encourages a closer examination of Python's object-oriented programming (OOP) paradigm, emphasizing the understanding that everything in Python is an object. The scenarios presented, such as variable modification and object aliasing, prompt contemplation about Python's behavior with different object types.
