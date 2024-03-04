@@ -1,110 +1,67 @@
-# 0x09. Python - Everything is object
+# 0x09. Python - Everything is Object
 
-## Python
-- OOP
-- By: Guillaume
-- Weight: 1
-- Project over - took place from Jan 5, 2024, 4:00 AM to Jan 6, 2024, 4:00 AM
-- An auto review will be launched at the deadline
+## Overview
+This project delves into the fundamental concept that in Python, everything is an object. The focus is on understanding Python's handling of different types of objects, particularly the distinctions between immutable and mutable objects.
 
-### In a nutshell…
-- Auto QA review: 0.0/94 mandatory & 0.0/59 optional
-- Altogether: 0.0%
-- Mandatory: 0.0%
-- Optional: 0.0%
-- Calculation: 0.0% + (0.0% * 0.0%) == 0.0%
+**By:** Guillaume
+
+**Weight:** 1
+
+**Project Duration:** Jan 5, 2024, 4:00 AM - Jan 6, 2024, 4:00 AM
+
+## Auto QA Review
+
+- **Mandatory:** 0.0/94
+- **Optional:** 0.0/59
+- **Altogether:** 0.0%
+  
+*Calculation: 0.0% + (0.0% * 0.0%) == 0.0%*
 
 ## Background Context
+This project encourages a closer examination of Python's object-oriented programming (OOP) paradigm, emphasizing the understanding that everything in Python is an object. The scenarios presented, such as variable modification and object aliasing, prompt contemplation about Python's behavior with different object types.
 
-Now that we understand that everything is an object and have a little bit of knowledge, let’s pause and look a little bit closer at how Python works with different types of objects.
+## Project Structure
+1. **Questions:** The first part of the project comprises questions about Python's specificity, challenging participants to predict outcomes before testing in the interpreter. The emphasis is on understanding the reasons behind the answers.
 
-BTW, have you ever modified a variable without knowing it or wanting to? I mean:
+2. **Approach:** Participants are advised to refrain from immediate coding in the Python interpreter. Instead, they are encouraged to read documentation, think, and brainstorm with peers before validating their insights through testing.
 
-```python
->>> a = 1
->>> b = a
->>> a = 2
->>> b
-1
->>> 
-OK. But what about this?
->>> l = [1, 2, 3]
->>> m = l
->>> l[0] = 'x'
->>> m
-['x', 2, 3]
->>>This project is a little bit different than the usual projects. The first part is only questions about Python’s specificity like “What would be the result of…”. You should read all documentation first (as usual :)), then take the time to think and brainstorm with your peers about what you think and why. Try to do this without coding anything for a few hours.
+## Resources
+Participants are recommended to read or watch the following:
 
-Trying examples in the Python interpreter will give you most of the answers without having to think about it. Don’t go this route. First read, then think, then brainstorm together. Only then you can test in the interpreter.
+- [Objects and values](#)
+- [Aliasing](#)
+- [Immutable vs mutable types](#)
+- [Mutation (Only this chapter)](#)
+- [Cloning lists](#)
+- [Python tuples: immutable but potentially changing](#)
 
-It’s important that you truly understand the reasons behind the answers of all those tasks so that you can apply the same logic to other variables and other variable types.
+## Learning Objectives
+Upon completion of this project, participants should be able to articulate, without relying on external resources:
 
-Note that during interviews for Python positions, you will most likely have to answer to these types of questions.
+### General
+- Why Python programming is awesome
+- What is an object
+- The difference between a class and an object or instance
+- The difference between immutable and mutable objects
+- The concept of reference in Python
+- What an assignment is
+- Understanding aliasing in Python
+- Identifying if two variables are identical
+- Determining if two variables are linked to the same object
+- Displaying variable identifiers (memory address in CPython)
+- Grasping the concepts of mutable and immutable objects
+- Recognition of built-in mutable and immutable types
+- Understanding how Python passes variables to functions
 
-All your answers should be only one line in a file. No space before or after the answer.Resources
-Read or watch:
+## Project Methodology
+1. **Read Documentation:** Participants are advised to thoroughly read the provided resources to build a strong foundation.
 
-9.10. Objects and values
-9.11. Aliasing
-Immutable vs mutable types
-Mutation (Only this chapter)
-9.12. Cloning lists
-Python tuples: immutable but potentially changing
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
+2. **Thinking and Brainstorming:** Before writing any code, participants should spend time thinking and brainstorming with peers to develop a conceptual understanding.
 
-General
-Why Python programming is awesome
-What is an object
-What is the difference between a class and an object or instance
-What is the difference between immutable object and mutable object
-What is a reference
-What is an assignment
-What is an alias
-How to know if two variables are identical
-How to know if two variables are linked to the same object
-How to display the variable identifier (which is the memory address in the CPython implementation)
-What is mutable and immutable
-What are the built-in mutable types
-What are the built-in immutable types
-How does Python pass variables to function
->>> l = [1, 2, 3]
->>> m = l
->>> l[0] = 'x'
->>> m
-['x', 2, 3]
->>>This project is a little bit different than the usual projects. The first part is only questions about Python’s specificity like “What would be the result of…”. You should read all documentation first (as usual :)), then take the time to think and brainstorm with your peers about what you think and why. Try to do this without coding anything for a few hours.
+3. **Answering Questions:** Responses to project questions should be concise, one-liners, reflecting a deep understanding of Python's behavior.
 
-Trying examples in the Python interpreter will give you most of the answers without having to think about it. Don’t go this route. First read, then think, then brainstorm together. Only then you can test in the interpreter.
+4. **Reflection:** The project aims to equip participants with the ability to apply learned logic to different variables and variable types, preparing them for Python interviews.
 
-It’s important that you truly understand the reasons behind the answers of all those tasks so that you can apply the same logic to other variables and other variable types.
+## Note
+Understanding the reasons behind the answers to Python specificity questions is crucial for applying the same logic to various scenarios. This project provides valuable insights for Python programming interviews.
 
-Note that during interviews for Python positions, you will most likely have to answer to these types of questions.
-
-All your answers should be only one line in a file. No space before or after the answer.Resources
-Read or watch:
-
-9.10. Objects and values
-9.11. Aliasing
-Immutable vs mutable types
-Mutation (Only this chapter)
-9.12. Cloning lists
-Python tuples: immutable but potentially changing
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-
-General
-Why Python programming is awesome
-What is an object
-What is the difference between a class and an object or instance
-What is the difference between immutable object and mutable object
-What is a reference
-What is an assignment
-What is an alias
-How to know if two variables are identical
-How to know if two variables are linked to the same object
-How to display the variable identifier (which is the memory address in the CPython implementation)
-What is mutable and immutable
-What are the built-in mutable types
-What are the built-in immutable types
-How does Python pass variables to functions
