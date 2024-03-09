@@ -4,11 +4,14 @@ after each line containing a specific string """
 
 
 def append_after(filename="", search_string="", new_string=""):
-    """inserting a line of text to a file
+    """Inserting a line of text to a file
     after each line containing a specific string"""
-    with open(filename, "w+", encoding="utf-8") as File:
-        line = File.readline()
-        while line != "":
+    lines = []
+    with open(filename, "r", encoding="utf-8") as file:
+        for line in file:
+            lines.append(line)
             if search_string in line:
-                File.write(new_string)
-            line = File.readline()
+                lines.append(new_string)
+
+    with open(filename, "w", encoding="utf-8") as file:
+        file.writelines(lines)
