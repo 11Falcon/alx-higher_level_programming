@@ -92,3 +92,32 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
   File "<stdin>", line 52, in matrix_mul
 ValueError: m_a and m_b can't be multiplied
+
+>>> a = [[1, 2],[2, 3]]
+>>> b = [[1, 2, 3],[1, 2, 3],[1, 2, 3]]
+>>> matrix_mul(a, b)
+Traceback (most recent call last):
+  ...
+ValueError: m_a and m_b can't be multiplied
+
+>>> b = [[1, 2.456],[2, 3], [1]]
+>>> a = [[1, 2],[2, 3]]
+>>> matrix_mul(a, b)
+Traceback (most recent call last):
+  ...
+TypeError: each row of m_b must be of the same size
+
+>>> a = [[1, 2.456],[2, 3], [1]]
+>>> b = [[1, 2],[2, 3]]
+>>> matrix_mul(a, b)
+Traceback (most recent call last):
+  ...
+TypeError: each row of m_a must be of the same size
+
+>>> a = [[1, 2.456],[2, 3.27386]]
+>>> b = [[1, 2.456],[2, "3"]]
+>>> matrix_mul(a, b)
+Traceback (most recent call last):
+  ...
+TypeError: m_b should contain only integers or floats
+
