@@ -1,59 +1,43 @@
-#include "/usr/include/python3.4/Python.h"
+#include <Python.h>
+#include <stdlib.h>
 #include <stdio.h>
 
-void print_hexn(const char *str, int n)
+/**
+ * print_python_string - prints information about a python string
+ * @p: pointer to the string object, checks to see it is string
+ */
+void print_python_string(PyObject *p)
 {
-	int i = 0;
+	char *unicode = "compact unicode object";
+	char *ascii = "compact ascii";
+	char *str = NULL, *encoding = NULL;
+	ssize_t len = 0;
+	int i;
+	PyObject *str_ob = NULL;
 
-	for (; i < n - 1; ++i)
-		printf("%02x ", (unsigned char) str[i]);
-
-	printf("%02x", str[i]);
-}
-
-void print_python_bytes(PyObject *p)
-{
-	PyBytesObject *clone = (PyBytesObject *) p;
-	int calc_bytes, clone_size = 0;
-
-	printf("[.] bytes object info\n");
-	if (PyBytes_Check(clone))
+	printf("[.] string object info\n");
+	if (!PyUnicode_Check(p))
 	{
-		clone_size = PyBytes_Size(p);
-		calc_bytes = clone_size + 1;
-
-		if (calc_bytes >= 10)
-			calc_bytes = 10;
-
-		printf("  size: %d\n", clone_size);
-		printf("  trying string: %s\n", clone->ob_sval);
-		printf("  first %d bytes: ", calc_bytes);
-		print_hexn(clone->ob_sval, calc_bytes);
-		printf("\n");
+		printf("  [ERROR] Invalid String Object\n");
+		return;
 	}
-	else
+
+	len = (ssize_t)PyUnicode_GET_LENGTH(p);
+
+	str_ob = PyUnicode_AsUTF8String(p);
+	str = PyBytes_AsString(str_ob);
+
+	for (i = 0; i < len; i++)
 	{
-		printf("  [ERROR] Invalid Bytes Object\n");
+		if (str[i] < 0)
+		{
+			encoding = unicode;
+			break;
+		}
 	}
-}
-
-void print_python_list(PyObject *p)
-{
-	int i = 0, list_len = 0;
-	PyObject *item;
-	PyListObject *clone = (PyListObject *) p;
-
-	printf("[*] Python list info\n");
-	list_len = PyList_GET_SIZE(p);
-	printf("[*] Size of the Python List = %d\n", list_len);
-	printf("[*] Allocated = %d\n", (int) clone->allocated);
-
-	for (; i < list_len; ++i)
-	{
-		item = PyList_GET_ITEM(p, i);
-		printf("Element %d: %s\n", i, item->ob_type->tp_name);
-
-		if (PyBytes_Check(item))
-			print_python_bytes(item);
-	}
+	if (encoding == NULL)
+		encoding = ascii;
+	printf("  type: %s\n", encoding);
+	printf("  length: %ld\n", len);
+	printf("  value: %s\n", str);
 }
