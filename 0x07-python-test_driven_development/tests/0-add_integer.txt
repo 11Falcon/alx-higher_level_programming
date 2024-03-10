@@ -108,3 +108,15 @@ Checking more than 2 args:
          Traceback (most recent call last):
          ...
          TypeError: add_integer() takes 2 positional arguments but 3 were given
+
+checking bool value:
+	>>> add_integer(True, 1)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+checking bool b value:
+	>>> add_integer(1, True)
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
