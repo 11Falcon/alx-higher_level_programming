@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const list = process.argv;
 if (list.length < 2) {
-  console.log('0');
+  console.log(0);
 } else {
   let big = 0;
   let i = 0;
