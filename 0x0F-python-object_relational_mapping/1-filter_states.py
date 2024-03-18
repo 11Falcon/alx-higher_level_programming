@@ -1,24 +1,20 @@
 #!/usr/bin/python3
-"""script for use in getting all states from sql db
 """
-import MySQLdb
-import sys
+lists all states with a name starting with N from hbtn_0e_0_usa
+"""
+if __name__ == "__main__":
+    import MySQLdb
+    import sys
 
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
 
-if __name__ == '__main__':
-    args = sys.argv
-    username = args[1]
-    password = args[2]
-    data = args[3]
-    db = MySQLdb.connect(host='localhost', user=username,
-                         passwd=password, db=data,
-                         port=3306)
+    db = MySQLdb.connect(host='localhost', port=3306, user=username,
+                         passwd=password, db=database_name)
     cur = db.cursor()
-    num_rows = cur.execute('''
-            SELECT * FROM states
-            WHERE states.name LIKE 'N%'
-            ORDER BY states.id
-            ''')
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY 'N%' "
+                "ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
         print(row)
