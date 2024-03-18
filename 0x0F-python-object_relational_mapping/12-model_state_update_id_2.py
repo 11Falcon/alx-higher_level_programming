@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-print all state objects in a database
-with names that contain an a
+updates the name of a state object in the database
 """
 if __name__ == "__main__":
     import sys
@@ -18,5 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    for instance in session.query(State).filter(State.name.contains('a')):
-        print("{}: {}".format(instance.id, instance.name))
+    update_state = session.query(State).filter(State.id == 2).all()
+    if update_state:
+        update_state[0].name = "New Mexico"
+        session.commit()
+        session.close()

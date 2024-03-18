@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-print all state objects in a database
-with names that contain an a
+uses sqlalchemy to list all state objects in given database
 """
 if __name__ == "__main__":
     import sys
     from model_state import Base, State
+    from model_city import City
     from sqlalchemy.orm import sessionmaker
     from sqlalchemy import create_engine
 
@@ -15,8 +15,11 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{:s}:{:s}@localhost:3306/{:s}'
                            .format(username, password, database_name))
 
+    Base.metadata.create_all(engine)
+
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    for instance in session.query(State).filter(State.name.contains('a')):
-        print("{}: {}".format(instance.id, instance.name))
+    for city, state in session.query(City, State).\
+            filter(State.id == City.state_id).order_by(City.id).all():
+        print("{}: ({}) {}".format(state.name, city.id, city.name))

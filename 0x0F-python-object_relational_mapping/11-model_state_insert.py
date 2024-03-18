@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-print all state objects in a database
-with names that contain an a
+script that adds the State object “Louisiana” to the database
 """
 if __name__ == "__main__":
     import sys
@@ -18,5 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker()
     Session.configure(bind=engine)
     session = Session()
-    for instance in session.query(State).filter(State.name.contains('a')):
-        print("{}: {}".format(instance.id, instance.name))
+    new_state = State(name="Louisiana")
+    session.add(new_state)
+    session.commit()
+    print(new_state.id)
+    session.close()
