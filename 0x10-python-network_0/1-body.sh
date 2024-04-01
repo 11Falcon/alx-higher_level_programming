@@ -1,2 +1,3 @@
 #!/bin/bash
-curl -sX GET $1 -L
+# taking a url , seding a GET request to the URL ...
+curl -sL "$1"
